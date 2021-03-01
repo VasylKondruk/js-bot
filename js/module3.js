@@ -335,22 +335,247 @@
 
 // Выполни рефакторинг функции countProps(object) используя метод Object.keys() и, возможно, цикл for...of.
 
-function countProps(object) {
-  // Пиши код ниже этой строки
-  let propCount = 0;
+// function countProps(object) {
 
+//   let propCount = 0;
+
+//   const key = Object.keys(object);
+
+//     propCount = key.length;
+
+//   return propCount;
+
+// }
+
+
+// console.log(countProps({}));
+// console.log(countProps({ name: 'Mango', age: 2 }));
+// console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
+
+
+// ============== ЗАДАЧА № 15 ===============
+
+// Запиши в переменную keys массив ключей собственных свойств объекта apartment, а в переменную values массив всех значений его свойств. Используй методы Object.keys() и Object.values().
+
+// const apartment = {
+//   descr: 'Просторная квартира в центре',
+//   rating: 4,
+//   price: 2153,
+// };
+// // Пиши код ниже этой строки
+// const keys = Object.keys(apartment);
+// const values = Object.values(apartment);
+
+// console.log(keys);
+// console.log(values);
+
+
+// ============== ЗАДАЧА № 16 ===============
+
+// Напиши функцию countTotalSalary(salaries) которая принимает объект зарплат, где имя свойства это имя сотрудника, а значение свойства это зарплата. Функция должна рассчитать общую сумму зарплат сотрудников и вернуть её. Используй переменную totalSalary для хранения общей суммы зарплаты.
+
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+ 
+//   const values = Object.values(salaries);
+
+//   for (const value of values) {
+//     if (values.hasOwnProperty(value)) {
+//       console.log('hello');
+//     }
+//       totalSalary += value;
+
+//  }
+
+//   return totalSalary;
+// }
+
+// console.log(countTotalSalary({}));
+// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));
+// console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+
+// ============== ЗАДАЧА № 17 ===============
+
+// Перебери массив объектов colors используя цикл for...of. Добавь в массив hexColors значения свойств hex, а в массив rgbColors значения свойств rgb из всех объектов массива colors.
+
+// const colors = [
+//   { hex: '#f44336', rgb: '244,67,54' },
+//   { hex: '#2196f3', rgb: '33,150,243' },
+//   { hex: '#4caf50', rgb: '76,175,80' },
+//   { hex: '#ffeb3b', rgb: '255,235,59' },
+// ];
+
+// const hexColors = [];
+// const rgbColors = [];
+
+// for (const color of colors) {
+//   hexColors.push(color.hex);
+//   rgbColors.push(color.rgb);
+
+// }
+
+// console.log(hexColors);
+// console.log(rgbColors);
+
+
+// ============== ЗАДАЧА № 18 ===============
+
+// Напиши функцию getProductPrice(productName) которая принимает один параметр productName - название продукта. Функция ищет объект продукта с таким именем (свойство name) в массиве products и возвращает его цену (свойство price). Если продукт с таким названием не найден, функция должна возвращать null.
+
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 9 },
+// ];
+
+// function getProductPrice(productName) {
+//   // Пиши код ниже этой строки
+//   for (const product of products) {
+//     // console.log(product);
+//     if (product.name === productName) {
+//       return product.price;
+//     }
+
+//   }
   
-  for (const key in object) {
-    if (object.hasOwnProperty(key)) {
-      propCount += 1;
-    }
-  }
+//   return null;
+// }
 
-  return propCount;
-  // Пиши код выше этой строки
-}
+// console.log(getProductPrice('Радар'));
+// console.log(getProductPrice('Захват'));
+// console.log(getProductPrice('Сканер'));
+// console.log(getProductPrice('Дроид'));
+// console.log(getProductPrice('Двигатель'));
 
 
-console.log(countProps({}));
-console.log(countProps({ name: 'Mango', age: 2 }));
-console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
+// ============== ЗАДАЧА № 19 ===============
+
+// Напиши функцию getAllPropValues(propName) которая принимает один параметр propName - имя (ключ) свойства. Функция должна вернуть массив всех значений свойства с таким именем из каждого объекта в массиве products. Если в объектах нет свойства с таким именем, функция должна вернуть пустой массив.
+
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 9 },
+// ];
+
+
+// function getAllPropValues(propName) {
+//   // Пиши код ниже этой строки
+//   let values = [];
+
+
+//   for (const product of products) {
+//     // console.log(product);
+
+//     if (Object.keys(product).includes(propName)) {
+//         // console.log(Object.keys(product));
+//         values.push(product[propName]);
+//     }
+//   }
+//   return values;
+//   // Пиши код выше этой строки
+// }
+
+// console.log(getAllPropValues('name'));
+// console.log(getAllPropValues('quantity'));
+// console.log(getAllPropValues('price'));
+// console.log(getAllPropValues('category'));
+
+
+// ============== ЗАДАЧА № 20 ===============
+
+// Напиши функцию calculateTotalPrice(productName) которая принимает один параметр productName - название товара. Функция должна вернуть общую стоимость (цена * количество) товара с таким именем из массива products.
+
+// const products = [
+//   { name: 'Радар', price: 1300, quantity: 4 },
+//   { name: 'Сканер', price: 2700, quantity: 3 },
+//   { name: 'Дроид', price: 400, quantity: 7 },
+//   { name: 'Захват', price: 1200, quantity: 9 },
+// ];
+
+// function calculateTotalPrice(productName) {
+
+//   let totalPrice = 0;
+
+//   for (const product of products) {
+
+//     if (product.name === productName) {
+//       totalPrice = product.price * product.quantity;
+//     }
+  
+//   }
+
+//   return totalPrice;
+// }
+
+// console.log(calculateTotalPrice('Бластер'));
+// console.log(calculateTotalPrice('Радар'));
+// console.log(calculateTotalPrice('Дроид'));
+// console.log(calculateTotalPrice('Захват'));
+// console.log(calculateTotalPrice('Сканер'));
+
+
+// ============== ЗАДАЧА № 21 ===============
+
+// Пришел трёхдневный прогноз максимальных температур и мы считаем среднюю температуру за три дня (meanTemperature). Замени объявления переменных yesterday, today и tomorrow одной операцией деструктуризации свойств объекта highTemperatures.
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+
+// const {yesterday, today, tomorrow} = highTemperatures;
+
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+// console.log(meanTemperature);
+
+
+// ============== ЗАДАЧА № 22 ===============
+
+// В прогнозе максимальных температур также может быть необязательное свойство icon - иконка погоды. Замени объявления переменных yesterday, today, tomorrow и icon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для icon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Пиши код ниже этой строки
+
+// const {
+//   yesterday,
+//   today,
+//   tomorrow,
+//   icon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'
+// } = highTemperatures;
+
+
+// // Пиши код выше этой строки
+// const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+
+// ============== ЗАДАЧА № 23 ===============
+
+// Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+
+// const highTemperatures = {
+//   yesterday: 28,
+//   today: 26,
+//   tomorrow: 33,
+// };
+// // Пиши код ниже этой строки
+
+// const {
+//   yesterday:highYesterday,
+//   today:highToday,
+//   tomorrow:highTomorrow,
+//   highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'
+// } = highTemperatures;
+
+// // Пиши код выше этой строки
+// const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
+
+// console.log(meanTemperature);
