@@ -1,4 +1,4 @@
-// ============== ЗАДАЧА № 1 ===============
+/ ============== ЗАДАЧА № 1 ===============
 
 // Присвой переменной apartment объект описывающий квартиру со следующими характеристиками:
 
@@ -553,5 +553,4 @@
 // const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
 
 // console.log(meanTemperature);
-
 
