@@ -579,3 +579,48 @@
 // const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
 
 // console.log(meanTemperature);
+
+
+// ============== ЗАДАЧА № 24 ===============
+
+// Выполни рефакторинг цикла for...of так, чтобы в нём использовалась деструктуризация объекта..
+
+const colors = [
+  { hex: '#f44336', rgb: '244,67,54' },
+  { hex: '#2196f3', rgb: '33,150,243' },
+  { hex: '#4caf50', rgb: '76,175,80' },
+  { hex: '#ffeb3b', rgb: '255,235,59' },
+];
+
+const hexColors = [];
+const rgbColors = [];
+// Пиши код ниже этой строки
+
+for (const {hex, rgb} of colors) {
+  hexColors.push(hex);
+  rgbColors.push(rgb);
+}
+
+
+// ============== ЗАДАЧА № 24 ===============
+
+// Мы получили прогноз погоды на два дня, с минимальными и максимальными температурами, а также необязательными иконками. Замени объявления всех переменных одной операцией деструктуризации свойств объекта forecast. Задай значение по умолчанию для иконок, переменных todayIcon и tomorrowIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
+
+const forecast = {
+  today: {
+    low: 28,
+    high: 32,
+    icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg',
+  },
+  tomorrow: {
+    low: 27,
+    high: 31,
+  },
+};
+// Пиши код ниже этой строки
+
+const {
+  today: {low, higt, icon: 'https://www.flaticon.com/svg/static/icons/svg/861/861059.svg'}, tomorrow: {low,higt},
+} = forecast;
+
+// console.log(highToday); 
