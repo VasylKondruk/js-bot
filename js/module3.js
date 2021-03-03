@@ -18,7 +18,6 @@
 
 // console.log(apartment);
 
-
 // ============== ЗАДАЧА № 2 ===============
 
 // Дополни объект квартиры свойством owner, значением которого будет объект с информацией о владельце. Добавь ему следующие свойства:
@@ -39,9 +38,8 @@
 //         email: 'henry.carter@aptmail.com',
 //     },
 // };
-  
-// console.log(apartment1);
 
+// console.log(apartment1);
 
 // ============== ЗАДАЧА № 3 ===============
 
@@ -59,16 +57,15 @@
 //     price: 2153,
 //     tags: ['premium', 'promoted', 'top'],
 //   };
-  
-  // Пиши код ниже этой строки
-  // const aptRating = apartment3.rating;
-  // const aptDescr = apartment3.descr;
-  // const aptPrice = apartment3.price;
-  // const aptTags = apartment3.tags;
-  // Пиши код выше этой строки
 
+// Пиши код ниже этой строки
+// const aptRating = apartment3.rating;
+// const aptDescr = apartment3.descr;
+// const aptPrice = apartment3.price;
+// const aptTags = apartment3.tags;
+// Пиши код выше этой строки
 
-  // ============== ЗАДАЧА № 4 ===============
+// ============== ЗАДАЧА № 4 ===============
 
 //   Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment.
 
@@ -101,7 +98,6 @@
 // const lastTag = apartment4.tags[2];
 // Пиши код выше этой строки
 
-
 // ============== ЗАДАЧА № 5 ===============
 
 //   Дополни код присвоив объявленным переменным выражения обращения к соответствующим свойствам обьекта apartment используя синтаксис «квадратных скобок».
@@ -125,7 +121,6 @@
 // const aptPrice = apartment5['price'];
 // const aptTags = apartment5['tags'];
 // Пиши код выше этой строки
-
 
 // ============== ЗАДАЧА № 6 ===============
 
@@ -155,7 +150,6 @@
 
 // console.log(apartment6);
 
-
 // ============== ЗАДАЧА № 7 ===============
 
 // Добавь объекту apartment несколько новых свойств:
@@ -184,12 +178,11 @@
 // apartment7.location = {
 
 //     country: 'Ямайка',
-    
+
 //     city: 'Кингстон',
 // };
 
 // console.log(apartment7);
-
 
 // ============== ЗАДАЧА № 8 ===============
 
@@ -207,12 +200,10 @@
 //     image,
 //     tags,
 
-
-  // Пиши код выше этой строки
+// Пиши код выше этой строки
 // };
 
 // console.log(product);
-
 
 // ============== ЗАДАЧА № 9 ===============
 
@@ -227,12 +218,11 @@
 //   // Пиши код ниже этой строки
 //   [emailInputName]: 'henry.carter@aptmail.com',
 //   [passwordInputName]:'jqueryismyjam',
-  
+
 //   // Пиши код выше этой строки
 // };
 
 // console.log(credentials);
-
 
 // ============== ЗАДАЧА № 10 ===============
 
@@ -255,7 +245,6 @@
 //   console.log(keys);
 //   console.log(values);
 
-
 // ============== ЗАДАЧА № 11 ===============
 
 // Выполни рефакторинг решения предыдущего задания добавив в цикл for...in проверку на собственное свойство.
@@ -273,17 +262,16 @@
 // for (const key in apartment11) {
 //   // Пиши код ниже этой строки
 //     if(apartment11.hasOwnProperty(key)) {
-    
+
 //         keys.push(key);
 //         values.push(apartment11[key]);
 //     }
-        
-  // Пиши код выше этой строки
+
+// Пиши код выше этой строки
 // }
 
 //   console.log(keys);
 // console.log(values);
-  
 
 // ============== ЗАДАЧА № 12 ===============
 
@@ -291,21 +279,20 @@
 
 // function countProps(object) {
 //   let propCount = 0;
-  // Пиши код ниже этой строки
+// Пиши код ниже этой строки
 
-    // for (const key in object) {
-    //     if (object.hasOwnProperty(key)) {
-    //         propCount += 1;
-    //     }
-    // }
-  // Пиши код выше этой строки
-  // return propCount;
+// for (const key in object) {
+//     if (object.hasOwnProperty(key)) {
+//         propCount += 1;
+//     }
+// }
+// Пиши код выше этой строки
+// return propCount;
 // }
 
 // console.log(countProps({}));
 // console.log(countProps({ name: 'Mango', age: 2 }));
 // console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
-
 
 // ============== ЗАДАЧА № 13 ===============
 
@@ -322,14 +309,13 @@
 
 // for (const key of keys) {
 //   if (keys.hasOwnProperty(key)) {
-   
+
 //   }
 //    values.push(apartment[key]);
 // }
 
 // console.log(values);
 // console.log(keys);
-
 
 // ============== ЗАДАЧА № 14 ===============
 
@@ -347,11 +333,9 @@
 
 // }
 
-
 // console.log(countProps({}));
 // console.log(countProps({ name: 'Mango', age: 2 }));
 // console.log(countProps({ mail: 'poly@mail.com', isOnline: true, score: 500 }));
-
 
 // ============== ЗАДАЧА № 15 ===============
 
@@ -369,14 +353,13 @@
 // console.log(keys);
 // console.log(values);
 
-
 // ============== ЗАДАЧА № 16 ===============
 
 // Напиши функцию countTotalSalary(salaries) которая принимает объект зарплат, где имя свойства это имя сотрудника, а значение свойства это зарплата. Функция должна рассчитать общую сумму зарплат сотрудников и вернуть её. Используй переменную totalSalary для хранения общей суммы зарплаты.
 
 // function countTotalSalary(salaries) {
 //   let totalSalary = 0;
- 
+
 //   const values = Object.values(salaries);
 
 //   for (const value of values) {
@@ -417,7 +400,6 @@
 // console.log(hexColors);
 // console.log(rgbColors);
 
-
 // ============== ЗАДАЧА № 18 ===============
 
 // Напиши функцию getProductPrice(productName) которая принимает один параметр productName - название продукта. Функция ищет объект продукта с таким именем (свойство name) в массиве products и возвращает его цену (свойство price). Если продукт с таким названием не найден, функция должна возвращать null.
@@ -438,7 +420,7 @@
 //     }
 
 //   }
-  
+
 //   return null;
 // }
 
@@ -447,7 +429,6 @@
 // console.log(getProductPrice('Сканер'));
 // console.log(getProductPrice('Дроид'));
 // console.log(getProductPrice('Двигатель'));
-
 
 // ============== ЗАДАЧА № 19 ===============
 
@@ -460,11 +441,9 @@
 //   { name: 'Захват', price: 1200, quantity: 9 },
 // ];
 
-
 // function getAllPropValues(propName) {
 //   // Пиши код ниже этой строки
 //   let values = [];
-
 
 //   for (const product of products) {
 //     // console.log(product);
@@ -482,7 +461,6 @@
 // console.log(getAllPropValues('quantity'));
 // console.log(getAllPropValues('price'));
 // console.log(getAllPropValues('category'));
-
 
 // ============== ЗАДАЧА № 20 ===============
 
@@ -504,7 +482,7 @@
 //     if (product.name === productName) {
 //       totalPrice = product.price * product.quantity;
 //     }
-  
+
 //   }
 
 //   return totalPrice;
@@ -515,7 +493,6 @@
 // console.log(calculateTotalPrice('Дроид'));
 // console.log(calculateTotalPrice('Захват'));
 // console.log(calculateTotalPrice('Сканер'));
-
 
 // ============== ЗАДАЧА № 21 ===============
 
@@ -532,7 +509,6 @@
 // const meanTemperature = (yesterday + today + tomorrow) / 3;
 
 // console.log(meanTemperature);
-
 
 // ============== ЗАДАЧА № 22 ===============
 
@@ -552,30 +528,30 @@
 //   icon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'
 // } = highTemperatures;
 
-
 // // Пиши код выше этой строки
 // const meanTemperature = (yesterday + today + tomorrow) / 3;
-
 
 // ============== ЗАДАЧА № 23 ===============
 
 // Замени объявления переменных highYesterday, highToday, highTomorrow и highIcon одной операцией деструктуризации свойств объекта highTemperatures. Задай значение по умолчанию для highIcon - строку 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'.
 
 // const highTemperatures = {
-//   yesterday: 28,
-//   today: 26,
-//   tomorrow: 33,
+//     yesterday: 28,
+//     today: 26,
+//     tomorrow: 33,
 // };
 // // Пиши код ниже этой строки
 
 // const {
-//   yesterday:highYesterday,
-//   today:highToday,
-//   tomorrow:highTomorrow,
-//   highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg'
+//     yesterday: highYesterday,
+//     today: highToday,
+//     tomorrow: highTomorrow,
+//     highIcon = 'https://www.flaticon.com/svg/static/icons/svg/2204/2204346.svg',
 // } = highTemperatures;
 
 // // Пиши код выше этой строки
 // const meanTemperature = (highYesterday + highToday + highTomorrow) / 3;
 
 // console.log(meanTemperature);
+
+
