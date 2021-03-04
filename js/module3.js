@@ -865,3 +865,117 @@ function addOverNum(...args) {
 // };
 
 // console.log(atTheOldToad.getPotions());
+
+// ============== ЗАДАЧА № 38 ===============
+// Дополни метод addPotion(potionName) так, чтобы он добавлял зелье potionName в конец массива зелий в свойстве potions.
+
+// const atTheOldToad = {
+//   potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
+//   addPotion(potionName) {
+//     return this.potions.push(potionName);
+//   },
+// };
+
+// atTheOldToad.addPotion('Невидимка');
+// atTheOldToad.addPotion('Зелье силы');
+
+// console.log(atTheOldToad.potions);
+
+// ============== ЗАДАЧА № 39 ===============
+// Дополни метод removePotion(potionName) так, чтобы он удалял зелье potionName из массива зелий в свойстве potions.
+
+// const atTheOldToad = {
+//   potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
+//   removePotion(potionName) {
+//     const index = this.potions.indexOf(potionName);
+//     console.log(index);
+//     return this.potions.splice(index, 1);
+
+//   },
+// };
+
+// atTheOldToad.removePotion('Дыхание дракона');
+// atTheOldToad.removePotion('Зелье скорости');
+
+// console.log(atTheOldToad.potions);
+
+// ============== ЗАДАЧА № 40 ===============
+
+// Дополни метод updatePotionName(oldName, newName) так, чтобы он обновлял название зелья с oldName на newName, в массиве зелий в свойстве potions.
+
+// const atTheOldToad = {
+//   potions: ['Зелье скорости', 'Дыхание дракона', 'Каменная кожа'],
+//   updatePotionName(oldName, newName) {
+//     const index = this.potions.indexOf(oldName);
+
+//     return this.potions.splice(index, 1, newName);
+//   },
+// };
+// atTheOldToad.updatePotionName('Дыхание дракона', 'Полиморф');
+// atTheOldToad.updatePotionName('Каменная кожа', 'Невидимка');
+
+// console.log(atTheOldToad.potions);
+
+// ============== ЗАДАЧА № 41 ===============
+// Заказчица хочет чтобы каждое зелье было представлено не только именем, но и ценой, а в будущем может быть и другими характеристиками.Поэтому теперь в свойстве potions будет храниться массив объектов со следующими свойствами.
+// Выполни рефакторинг методов объекта atTheOldToad так, чтобы они работали не с массивом строк, а с массивом объектов.
+
+// getPotions() - метод для получения всех зелий. Возвращает значение свойства potions.
+// addPotion(newPotion) - добавляет зелье newPotion (уже объект) в массив в свойстве potions.
+// removePotion(potionName) - удаляет объект зелья с именем potionName из массива в свойстве potions.
+// updatePotionName(oldName, newName) - обновляет свойство name объекта-зелья с названием oldName на newName в массиве potions.
+
+const atTheOldToad = {
+  potions: [
+    { name: 'Зелье скорости', price: 460 },
+    { name: 'Дыхание дракона', price: 780 },
+    { name: 'Каменная кожа', price: 520 },
+  ],
+  // Пиши код ниже этой строки
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(potionName) {
+    if (this.potions.includes(potionName)) {
+      return `Зелье ${potionName} уже есть в инвентаре!`;
+    }
+
+    this.potions.push(potionName);
+  },
+
+  removePotion(potionName) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      const potion = this.potions[i];
+
+      if (potionName === potion.name) {
+        // console.log(`ми нашли продукт `, potionName);
+        this.potions.splice(i, 1);
+      }
+    }
+  },
+
+  updatePotionName(oldName, newName) {
+    for (let i = 0; i < this.potions.length; i += 1) {
+      const potion = this.potions[i];
+
+      console.log(potion);
+
+      if (oldName === potion.name) {
+        // console.log(`ми нашли продукт `, oldName);
+        this.potions.splice(0, 1, newName);
+      }
+    }
+  },
+};
+
+atTheOldToad.getPotions();
+// atTheOldToad.addPotion({ name: 'Невидимка', price: 620 });
+// atTheOldToad.addPotion({ name: 'Зелье силы', price: 270 });
+
+// atTheOldToad.removePotion('Дыхание дракона');
+// atTheOldToad.removePotion('Зелье скорости');
+
+atTheOldToad.updatePotionName('Дыхание дракона', 'Полиморф');
+// atTheOldToad.updatePotionName('Каменная кожа', 'Зелье неуязвимости');
+
+console.log(atTheOldToad.getPotions());
