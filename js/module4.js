@@ -153,13 +153,101 @@
 // Используй this в теле функции для доступа к свойствам объекта-заказа в контексте которого она была вызывана.
 // Дополни код так, чтобы в переменной messages, с помощью метода map, получился массив сообщений о статусе заказов из массива orders.
 
-const orders = [
-  { email: 'solomon@topmail.ua', dish: 'Burger' },
-  { email: 'artemis@coldmail.net', dish: 'Pizza' },
-  { email: 'jacob@mail.com', dish: 'Taco' },
-];
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
 
-// Пиши код ниже этой строки
-function composeMessage(position) {}
+// // Пиши код ниже этой строки
+// function composeMessage(position) {
+//   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position} -й в очереди.`;
+// }
 
-const messages = [];
+// const messages = orders.map(function (order, index) {
+//   return composeMessage.call(order, index + 1);
+// });
+
+// console.log(messages);
+
+// =========================== ex. 8 ===========================
+// Выполни рефакторинг кода так, чтобы функция composeMessage(position) вызывалась методом apply.
+
+// const orders = [
+//   { email: 'solomon@topmail.ua', dish: 'Burger' },
+//   { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//   { email: 'jacob@mail.com', dish: 'Taco' },
+// ];
+
+// // Пиши код ниже этой строки
+// function composeMessage(position) {
+//   return `Готовим ${this.dish} для ${this.email}. Ваш заказ ${position}-й в очереди.`;
+// }
+
+// const messages = orders.map((order, index) =>
+//   composeMessage.apply(order, [index + 1]),
+// );
+
+// console.log(messages);
+
+// =========================== ex. 9 ===========================
+// Функция composeMessage(customerName) создаёт приветственные сообщения для ресторанов. Дополни код так, чтобы в переменных pizzaPalaceComposer и burgerShackComposer были её копии с привязанным контекстом к соответствующим объектам.
+
+// const burgerShack = {
+//   company: 'Burger Shack',
+// };
+
+// function composeMessage(customerName) {
+//   return `${customerName}, всегда рады вас видеть в «${this.company}».`;
+// }
+// // Пиши код ниже этой строки
+// const pizzaPalace = {
+//   company: 'Pizza Palace',
+// };
+
+// const pizzaPalaceComposer = composeMessage.bind(pizzaPalace);
+// const pizzaPalaceMessage = pizzaPalaceComposer('Манго');
+// console.log(pizzaPalaceMessage);
+
+// const burgerShackComposer = composeMessage.bind(burgerShack);
+// const burgerShackMessage = burgerShackComposer('Поли');
+// console.log(burgerShackMessage);
+
+// =========================== ex. 10 ===========================
+
+// Сервису рассылки электронной почты необходимо добавить логирование действий для сбора статистики. Функция logAndInvokeAction(email, action) ожидает почту и действие которое нужно выполнить - ссылку на метод объекта service. Сбор статистики симулируется логированием строки. Разберись и дополни код так, чтобы он работал верно.
+
+// const service = {
+//   mailingList: ['mango@mail.com', 'poly@hotmail.de', 'ajax@jmail.net'],
+//   subscribe(email) {
+//     this.mailingList.push(email);
+//     return `Почта ${email} добавлена в рассылку.`;
+//   },
+//   unsubscribe(email) {
+//     this.mailingList = this.mailingList.filter(e => e !== email);
+//     return `Почта ${email} удалена из рассылки.`;
+//   },
+// };
+
+// function logAndInvokeAction(email, action) {
+//   console.log(`Выполняем действие с ${email}.`);
+//   return action(email);
+// }
+
+// const firstInvoke = logAndInvokeAction(
+//   'kiwi@mail.uk',
+//   service.subscribe.bind(service),
+// );
+
+// console.log(firstInvoke);
+
+// console.log(service.mailingList);
+
+// const secondInvoke = logAndInvokeAction(
+//   'poly@hotmail.de',
+//   service.unsubscribe.bind(service),
+// );
+
+// console.log(secondInvoke);
+
+// console.log(service.mailingList);
